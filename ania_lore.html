@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦ ANIA LORE ✦ — the unofficial archive of me</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for elegant serif headings, Caveat for handwritten labels, Inter for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        scrapcream: '#FDFBF7',
+                        paperbg: '#F4EFE6',
+                        softpink: '#F4C2C2',
+                        dustypink: '#D8A47F',
+                        mutedgreen: '#A3B18B',
+                        matchagreen: '#C8D6AF',
+                        warmbrown: '#7F5539',
+                        darkbrown: '#4A3319',
+                        softyellow: '#FDF0D5'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        hand: ['"Caveat"', 'cursive'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F4EFE6;
+            background-image: 
+                radial-gradient(#d4c5b9 0.75px, transparent 0.75px), 
+                radial-gradient(#d4c5b9 0.75px, #F4EFE6 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            color: #4A3319;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-hand { font-family: 'Caveat', cursive; }
+
+        /* Wiggle & Float animations */
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        @keyframes sparkleAnim {
+            0% { transform: scale(0.8) rotate(0deg); opacity: 0.8; }
+            50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+            100% { transform: scale(0.8) rotate(0deg); opacity: 0.8; }
+        }
+
+        .sticker-wiggle:hover {
+            animation: wiggle 0.3s ease-in-out infinite;
+        }
+        .sticker-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .sparkle {
+            animation: sparkleAnim 2s ease-in-out infinite;
+        }
+
+        /* Polaroid / Scrapbook Card Style */
+        .scrapbook-card {
+            background: #FDFBF7;
+            border: 2px dashed #D8A47F;
+            box-shadow: 4px 4px 0px rgba(127, 85, 57, 0.15);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .scrapbook-card:hover {
+            transform: translateY(-3px) rotate(0.5deg);
+            box-shadow: 6px 6px 0px rgba(127, 85, 57, 0.25);
+        }
+
+        /* Tape effect */
+        .tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-1deg);
+            width: 90px;
+            height: 24px;
+            background-color: rgba(244, 194, 194, 0.5);
+            border-left: 2px dashed rgba(216, 164, 127, 0.6);
+            border-right: 2px dashed rgba(216, 164, 127, 0.6);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Notebook tab styling */
+        .notebook-tab {
+            transition: all 0.2s ease;
+            cursor: pointer;
+            writing-mode: horizontal-tb;
+        }
+        .notebook-tab.active {
+            background-color: #FDFBF7;
+            border-color: #7F5539;
+            transform: translateY(-4px);
+            font-weight: 700;
+            box-shadow: 0px 4px 0px #7F5539;
+        }
+
+        /* Fangirl Mode Sparkles overlay */
+        body.fangirl-mode {
+            background-color: #fff0f3 !important;
+        }
+        body.fangirl-mode .scrapbook-card {
+            border-color: #f43f5e !important;
+            box-shadow: 4px 4px 0px rgba(244, 63, 94, 0.3) !important;
+        }
+
+        /* Custom scrollbar for horizontal tabs */
+        ::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1ebd9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D8A47F;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-softpink selection:text-darkbrown">
+
+    <!-- Floating Easter Egg Secret Star (Hidden top right) -->
+    <div onclick="revealSecretPage()" class="fixed top-4 right-4 z-50 cursor-pointer sticker-wiggle text-2xl bg-scrapcream px-3 py-1 rounded-full border border-warmbrown shadow-sm" title="click me if you dare">
+        ⭐ <span class="font-hand text-sm font-bold text-warmbrown">secret?</span>
+    </div>
+
+    <!-- Header / Banner Area -->
+    <header class="w-full max-w-5xl mx-auto px-4 pt-8 pb-4 text-center relative">
+        <div class="absolute left-4 top-4 hidden md:block font-hand text-lg text-dustypink rotate-[-6deg] sticker-float">
+            ✦ girl, bro, hi ✦
+        </div>
+        <div class="absolute right-12 top-6 hidden md:block font-hand text-lg text-mutedgreen rotate-[8deg] sticker-float">
+            ⭐ currently obsessed!
+        </div>
+
+        <div class="inline-block relative">
+            <div class="tape"></div>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight text-darkbrown mb-1">
+                ✦ ANIA LORE ✦
+            </h1>
+        </div>
+        
+        <p class="font-hand text-2xl md:text-3xl text-warmbrown mt-1">
+            “the unofficial archive of me”
+        </p>
+        <p class="font-sans text-sm md:text-base text-darkbrown/80 mt-2 font-medium bg-softpink/40 inline-block px-4 py-1 rounded-full border border-softpink">
+            welcome to my little corner of the internet ♡
+        </p>
+
+        <!-- Quick Decorative Ticker -->
+        <div class="flex flex-wrap justify-center gap-3 mt-4 text-xs font-hand text-warmbrown">
+            <span class="bg-matchagreen/50 px-2 py-0.5 rounded border border-matchagreen rotate-[-2deg]">girl</span>
+            <span class="bg-softpink/50 px-2 py-0.5 rounded border border-softpink rotate-[3deg]">bro</span>
+            <span class="bg-dustypink/30 px-2 py-0.5 rounded border border-dustypink rotate-[-1deg]">⭐</span>
+            <span class="bg-matchagreen/50 px-2 py-0.5 rounded border border-matchagreen rotate-[2deg]">🍀</span>
+            <span class="bg-softyellow px-2 py-0.5 rounded border border-amber-200 rotate-[-3deg]">currently obsessed</span>
+            <span class="bg-softpink/50 px-2 py-0.5 rounded border border-softpink rotate-[1deg]">please don't judge my lore</span>
+        </div>
+
+        <!-- Utility Buttons Bar: Random Fact, Current Era, Fangirl Mode -->
+        <div class="flex flex-wrap justify-center gap-3 mt-6">
+            <button onclick="triggerRandomFact()" class="bg-matchagreen text-darkbrown font-sans text-xs md:text-sm font-semibold px-4 py-2 rounded-xl shadow-sm border border-warmbrown/30 hover:bg-matchagreen/80 transition sticker-wiggle">
+                🎲 give me a random fact about me
+            </button>
+            <button onclick="triggerCurrentEraModal()" class="bg-softpink text-darkbrown font-sans text-xs md:text-sm font-semibold px-4 py-2 rounded-xl shadow-sm border border-warmbrown/30 hover:bg-softpink/80 transition sticker-wiggle">
+                ⚡ what am I obsessed with rn?
+            </button>
+            <button onclick="toggleFangirlMode()" id="fangirlBtn" class="bg-dustypink text-scrapcream font-sans text-xs md:text-sm font-semibold px-4 py-2 rounded-xl shadow-sm border border-warmbrown/30 hover:opacity-90 transition sticker-wiggle">
+                💖 fangirl mode: OFF
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs (Horizontally scrollable on mobile) -->
+    <nav class="w-full max-w-5xl mx-auto px-4 my-4">
+        <div id="nav-tabs-container" class="flex overflow-x-auto gap-2 pb-3 pt-2 px-1 scroll-smooth">
+            <!-- Tabs generated dynamically via JS or statically in markup -->
+            <button onclick="switchTab('home')" class="notebook-tab active shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                🏠 Home
+            </button>
+            <button onclick="switchTab('tab-01')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                01 Basic Lore
+            </button>
+            <button onclick="switchTab('tab-02')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                02 Favorite Things
+            </button>
+            <button onclick="switchTab('tab-03')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                03 Hobbies & Brain
+            </button>
+            <button onclick="switchTab('tab-04')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                04 Media Lore
+            </button>
+            <button onclick="switchTab('tab-05')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                05 Music
+            </button>
+            <button onclick="switchTab('tab-06')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                06 Celeb Lore
+            </button>
+            <button onclick="switchTab('tab-07')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                07 Current Era
+            </button>
+            <button onclick="switchTab('tab-08')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                08 Little Things
+            </button>
+            <button onclick="switchTab('tab-09')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                09 Inside My Head
+            </button>
+            <button onclick="switchTab('tab-10')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                10 The Deep Stuff
+            </button>
+            <button onclick="switchTab('tab-11')" class="notebook-tab shrink-0 px-4 py-2 bg-paperbg border border-warmbrown/40 rounded-t-xl font-sans text-sm font-semibold text-darkbrown shadow-sm">
+                11 Dream Life
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="w-full max-w-5xl mx-auto px-4 mb-16 flex-grow">
+
+        <!-- ==================== HOME / LANDING PAGE ==================== -->
+        <section id="section-home" class="tab-content grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Profile Card -->
+            <div class="col-span-1 md:col-span-6 scrapbook-card p-6 rounded-2xl relative">
+                <div class="tape"></div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-20 h-20 bg-softpink rounded-full border-2 border-dashed border-warmbrown flex items-center justify-center text-3xl shadow-inner">
+                        🌸
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-2xl font-bold text-darkbrown">Sanzida Ahmed Ania</h2>
+                        <p class="font-hand text-xl text-warmbrown">aka Ania / Anu</p>
+                        <div class="flex gap-2 mt-1">
+                            <span class="bg-matchagreen/60 text-darkbrown text-xs font-semibold px-2 py-0.5 rounded-full border border-warmbrown/30">19 yrs</span>
+                            <span class="bg-softpink/60 text-darkbrown text-xs font-semibold px-2 py-0.5 rounded-full border border-warmbrown/30">INFJ</span>
+                            <span class="bg-dustypink/40 text-darkbrown text-xs font-semibold px-2 py-0.5 rounded-full border border-warmbrown/30">Leo ♌</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="font-sans text-sm text-darkbrown/90 leading-relaxed bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                    “a chill, weird, 100% authentic fangirl currently trying to figure out life, build things, survive studying, and somehow move to Thailand.”
+                </p>
+                <div class="mt-4 flex justify-between items-center text-xs text-warmbrown font-hand text-lg">
+                    <span>⭐ Favorite number: <strong onclick="clickFavoriteSeven()" class="cursor-pointer bg-softyellow px-2 py-0.5 rounded border border-warmbrown/30 hover:bg-softpink transition" title="click me multiple times!">7</strong></span>
+                    <span>📍 Dhaka / Internet</span>
+                </div>
+            </div>
+
+            <!-- Current Era Card -->
+            <div class="col-span-1 md:col-span-6 scrapbook-card p-6 rounded-2xl relative bg-[#FCF9F2]">
+                <div class="tape" style="background-color: rgba(163, 177, 139, 0.6);"></div>
+                <h3 class="font-serif text-xl font-bold text-darkbrown mb-3 flex items-center gap-2">
+                    ⚡ CURRENT ERA
+                </h3>
+                <div class="space-y-2 font-sans text-sm text-darkbrown">
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Ultimate Fixation</span>
+                        <span class="font-hand text-lg font-bold text-rose-700 bg-softpink/40 px-2 py-0.5 rounded">PHUWIN TANG</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Project</span>
+                        <span class="font-sans text-xs bg-matchagreen/40 px-2 py-1 rounded font-medium">NEW WEBSITES</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Hobby</span>
+                        <span class="font-sans text-xs bg-dustypink/30 px-2 py-1 rounded font-medium">STICKERS & NOTEBOOKS</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Weekend Vibe</span>
+                        <span class="font-sans text-xs bg-softyellow px-2 py-1 rounded font-medium">SATURDAY SHOWS</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-center font-hand text-base text-warmbrown">
+                    “like, bro, can you believe it?” ✨
+                </div>
+            </div>
+
+            <!-- Quick Navigation Shortcuts Scrapbook Grid -->
+            <div class="col-span-1 md:col-span-12 mt-4">
+                <h3 class="font-serif text-xl font-bold text-darkbrown mb-3 text-center">📁 explore the notebook sections</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    <button onclick="switchTab('tab-01')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">01</span> Basic Lore ID
+                    </button>
+                    <button onclick="switchTab('tab-02')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">02</span> Favorite Things
+                    </button>
+                    <button onclick="switchTab('tab-03')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">03</span> Hobbies & Brain
+                    </button>
+                    <button onclick="switchTab('tab-04')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">04</span> Media Lore
+                    </button>
+                    <button onclick="switchTab('tab-05')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">05</span> Music Playlist
+                    </button>
+                    <button onclick="switchTab('tab-06')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">06</span> Celeb Database
+                    </button>
+                    <button onclick="switchTab('tab-07')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">07</span> Current Era Diary
+                    </button>
+                    <button onclick="switchTab('tab-08')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">08</span> Little Things
+                    </button>
+                    <button onclick="switchTab('tab-09')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">09</span> Inside My Head
+                    </button>
+                    <button onclick="switchTab('tab-10')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition">
+                        <span class="font-hand text-base text-warmbrown block">10</span> The Deep Stuff
+                    </button>
+                    <button onclick="switchTab('tab-11')" class="scrapbook-card p-3 rounded-xl text-left font-sans text-xs font-semibold hover:bg-softpink/20 transition col-span-2 sm:col-span-1 md:col-span-2">
+                        <span class="font-hand text-base text-warmbrown block">11</span> Dream Life & Wishlist 🇹🇭
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 01 — BASIC LORE ==================== -->
+        <section id="section-tab-01" class="tab-content hidden">
+            <div class="max-w-2xl mx-auto scrapbook-card p-8 rounded-2xl relative">
+                <div class="tape"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">⭐ official character card ⭐</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">01 — BASIC LORE</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans text-sm">
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Full Name</span>
+                        <strong class="text-base text-darkbrown">Sanzida Ahmed Ania</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Preferred Names</span>
+                        <strong class="text-base text-darkbrown">Ania / Anu</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Age</span>
+                        <strong class="text-base text-darkbrown">19</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">MBTI</span>
+                        <strong class="text-base text-darkbrown">INFJ</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Zodiac</span>
+                        <strong class="text-base text-darkbrown">Leo ♌</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Favorite Number</span>
+                        <strong class="text-base text-darkbrown">7 ⭐</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Favorite Subject</span>
+                        <strong class="text-base text-darkbrown">English</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Personality</span>
+                        <strong class="text-base text-darkbrown">Chill, weird, 100% authentic, non-toxic fangirl.</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 col-span-1 sm:col-span-2">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Favorite Words</span>
+                        <strong class="text-base text-darkbrown">“girl” • “hi” • “bro” • “so cute”</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Favorite Emojis</span>
+                        <strong class="text-base text-darkbrown">⭐ 🍀</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Most Used Emoji</span>
+                        <strong class="text-base text-darkbrown">⭐</strong>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 col-span-1 sm:col-span-2">
+                        <span class="block text-xs font-semibold text-warmbrown uppercase">Most Used Phrase</span>
+                        <strong class="text-base text-darkbrown font-hand text-lg">“Like, bro, can you believe it?”</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 02 — FAVORITE THINGS ==================== -->
+        <section id="section-tab-02" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🍀 curated collection of likes 🍀</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">02 — FAVORITE THINGS</h2>
+                </div>
+                <div id="favorites-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 03 — HOBBIES & CREATIVE BRAIN ==================== -->
+        <section id="section-tab-03" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto scrapbook-card p-8 rounded-2xl relative bg-[#FCFBF8]">
+                <div class="tape" style="background-color: rgba(200, 214, 175, 0.7);"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🎨 messy creative desk energy 🎨</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">03 — HOBBIES & CREATIVE BRAIN</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-paperbg p-5 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-3 text-lg">✨ Favorite Hobbies</h3>
+                        <ul class="space-y-2 font-sans text-sm text-darkbrown/90">
+                            <li class="flex items-center gap-2">📺 Watching series</li>
+                            <li class="flex items-center gap-2">🎬 Watching movies</li>
+                            <li class="flex items-center gap-2">🛠️ Making things</li>
+                            <li class="flex items-center gap-2">📁 Organizing things</li>
+                            <li class="flex items-center gap-2">✍️ Writing things down</li>
+                            <li class="flex items-center gap-2">🗓️ Planning things</li>
+                            <li class="flex items-center gap-2">💡 Creating random projects</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-paperbg p-5 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-3 text-lg">✂️ Creative Things</h3>
+                        <ul class="space-y-2 font-sans text-sm text-darkbrown/90">
+                            <li class="flex items-center gap-2">🌐 Website making</li>
+                            <li class="flex items-center gap-2">🎞️ Editing</li>
+                            <li class="flex items-center gap-2">🏷️ Sticker making</li>
+                            <li class="flex items-center gap-2">💻 Digital projects</li>
+                            <li class="flex items-center gap-2">📂 Organizing information</li>
+                            <li class="flex items-center gap-2">🎨 Designing things</li>
+                            <li class="flex items-center gap-2">📓 Notebook filling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Current Hyperfixations -->
+                <div class="mt-6 space-y-4">
+                    <div class="bg-softpink/40 p-4 rounded-xl border-2 border-dashed border-softpink text-center">
+                        <span class="block text-xs font-bold text-warmbrown uppercase mb-1">🔥 Current Hyperfixation</span>
+                        <strong class="font-serif text-xl text-darkbrown">“MAKING NEW NEW WEBSITES”</strong>
+                    </div>
+                    <div class="bg-matchagreen/30 p-4 rounded-xl border-2 border-dashed border-matchagreen text-center">
+                        <span class="block text-xs font-bold text-warmbrown uppercase mb-1">🌿 Current Creative Obsession</span>
+                        <strong class="font-serif text-lg text-darkbrown">“filling one random notebook with literally anything possible + making stickers”</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 04 — MEDIA LORE ==================== -->
+        <section id="section-tab-04" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🍿 library card & watchlists 🍿</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">04 — MEDIA LORE</h2>
+                </div>
+                <div id="media-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 05 — MUSIC ==================== -->
+        <section id="section-tab-05" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto scrapbook-card p-8 rounded-2xl relative">
+                <div class="tape" style="background-color: rgba(216, 164, 127, 0.5);"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🎵 scrapbook playlist aesthetic 🎵</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">05 — MUSIC LORE</h2>
+                </div>
+
+                <div class="space-y-4 font-sans text-sm">
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <span class="font-semibold text-warmbrown">Current Favorite Song</span>
+                        <span class="font-serif font-bold text-base text-rose-700 bg-softpink/40 px-3 py-1 rounded-lg">Last Leaves of Autumn</span>
+                    </div>
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <span class="font-semibold text-warmbrown">Favorite Song</span>
+                        <span class="font-serif font-bold text-base text-darkbrown">Moon Ji</span>
+                    </div>
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <span class="font-semibold text-warmbrown">Favorite Album</span>
+                        <span class="font-serif font-bold text-base text-darkbrown">SHOT CALLERS</span>
+                    </div>
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <span class="font-semibold text-warmbrown">Current Kinda-Ultimate Artist</span>
+                        <span class="font-serif font-bold text-base text-darkbrown bg-matchagreen/40 px-3 py-1 rounded-lg">James — CORTIS</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-2">🎤 Favorite Artists</h3>
+                            <p class="text-darkbrown/80 text-xs leading-relaxed">Habib Wahid, Jeff Satur, Atif Aslam, Phuwin</p>
+                        </div>
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-2">🎶 K-Pop Groups</h3>
+                            <p class="text-darkbrown/80 text-xs leading-relaxed">LNGSHOT, CORTIS, ENHYPEN, BTS, ILLIT, LE SSERAFIM, aespa, NewJeans, BLACKPINK</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-2">🎵 T-Pop</h3>
+                        <p class="text-darkbrown/80 text-xs leading-relaxed">FELIZZ, LYKN, PROXIE, FFK, Kamikaze</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 06 — CELEB LORE ==================== -->
+        <section id="section-tab-06" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🌟 fangirl-made encyclopedia 🌟</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">06 — CELEB LORE</h2>
+                    <p class="font-sans text-xs text-darkbrown/70 mt-1">Click any card to expand lore placeholders (Birthday, Debut, Roles, Works, Socials, etc.)</p>
+                </div>
+
+                <!-- Category Selector / Tabs for Celebs -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6" id="celeb-cat-buttons">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <!-- Celeb Cards Container -->
+                <div id="celeb-cards-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 07 — CURRENT ERA ==================== -->
+        <section id="section-tab-07" class="tab-content hidden">
+            <div class="max-w-2xl mx-auto scrapbook-card p-8 rounded-2xl relative bg-[#FCFBF8]">
+                <div class="tape" style="background-color: rgba(244, 194, 194, 0.7);"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">⚡ "right now" diary page ⚡</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">07 — CURRENT ERA</h2>
+                </div>
+
+                <div class="space-y-3 font-sans text-sm">
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Current Favorite Song</span>
+                        <span class="font-serif font-bold text-rose-700 bg-softpink/40 px-2.5 py-1 rounded">Last Leaves of Autumn</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Current Obsession</span>
+                        <span class="font-serif font-bold text-darkbrown">Random notebook filling + sticker making</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center bg-softyellow/60">
+                        <span class="font-semibold text-warmbrown">Current Person Obsession</span>
+                        <span class="font-hand text-xl font-bold text-rose-700">PHUWIN TANG</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Current Hyperfixation</span>
+                        <span class="font-serif font-bold text-darkbrown bg-matchagreen/40 px-2 py-1 rounded">Making new websites</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Currently Making Me Happy</span>
+                        <span class="font-serif font-bold text-darkbrown">Saturday shows</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Currently Saving For</span>
+                        <span class="font-serif font-bold text-darkbrown">Nothing right now</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Current Wishlist</span>
+                        <span class="font-serif font-bold text-darkbrown text-xs sm:text-sm text-right">Enough money to buy all the crafting and stationery supplies I want</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Currently Listening To</span>
+                        <span class="font-serif font-bold text-darkbrown">Ratan Mangoes podcasts</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Currently Reading</span>
+                        <span class="font-serif font-bold text-darkbrown">Admission preparation books</span>
+                    </div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 flex justify-between items-center">
+                        <span class="font-semibold text-warmbrown">Currently Excited About</span>
+                        <span class="font-serif font-bold text-darkbrown">Next Saturday shows</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 08 — LITTLE THINGS ==================== -->
+        <section id="section-tab-08" class="tab-content hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🎀 quirky little habits & truths 🎀</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">08 — LITTLE THINGS</h2>
+                </div>
+                <div id="little-things-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 09 — INSIDE MY HEAD ==================== -->
+        <section id="section-tab-09" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto scrapbook-card p-8 rounded-2xl relative bg-[#FCF9F2]">
+                <div class="tape" style="background-color: rgba(163, 177, 139, 0.5);"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">💭 deeper diary thoughts 💭</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">09 — INSIDE MY HEAD</h2>
+                </div>
+
+                <div class="space-y-4 font-sans text-sm">
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🌀 What I Overthink About</h3>
+                        <p class="text-darkbrown/90">“What if I don't get the chance to study outside the country?”<br>“What if I can't stay in Thailand?”</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🕰️ Past Things I Overthink</h3>
+                        <p class="text-darkbrown/90">Past relationships, exes, guilt, past friendships, toxic friendships, who I trusted.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🌿 What Makes Me Feel Understood</h3>
+                        <p class="text-darkbrown/90">When someone notices something small, remembers it, and brings it up later. Especially when someone remembers a tiny detail for a birthday gift.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-1">💌 What Makes Me Feel Appreciated</h3>
+                            <p class="text-darkbrown/90">Letters, texts, thoughtful messages.</p>
+                        </div>
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-1">🤍 What Makes Me Feel Loved</h3>
+                            <p class="text-darkbrown/90">When someone looks genuinely happy around me. And holding hands.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-1">✨ What Cheers Me Up</h3>
+                            <p class="text-darkbrown/90">BL.</p>
+                        </div>
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-1">🛡️ What Makes Me Feel Safe</h3>
+                            <p class="text-darkbrown/90">Familiar places, familiar people.</p>
+                        </div>
+                        <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                            <h3 class="font-serif font-bold text-darkbrown mb-1">🌧️ When I'm Upset</h3>
+                            <p class="text-darkbrown/90">I prefer distraction or space.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">👀 What People Misunderstand</h3>
+                        <p class="text-darkbrown/90">People may think I'm just a quiet, nice girl.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">⭐ What I Wish People Asked Me About</h3>
+                        <p class="text-darkbrown/90">My fangirling. What I'm watching. What I haven't watched. Exchanging fandom information.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🏆 What I'm Proud Of</h3>
+                        <p class="text-darkbrown/90">Learning to exist in the modern digital/creative world: making websites, using apps, editing, building things myself.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🧭 Currently Figuring Out</h3>
+                        <p class="text-darkbrown/90">Career direction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 10 — THE DEEP STUFF ==================== -->
+        <section id="section-tab-10" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto scrapbook-card p-8 rounded-2xl relative bg-[#FAF7F0]">
+                <div class="tape" style="background-color: rgba(216, 164, 127, 0.6);"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🕊️ softer, intimate reflections 🕊️</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">10 — THE DEEP STUFF</h2>
+                </div>
+
+                <div class="space-y-4 font-sans text-sm">
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">💫 A Memory I'll Never Forget</h3>
+                        <p class="text-darkbrown/90">My first kiss.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">⚡ Something That Changed Me</h3>
+                        <p class="text-darkbrown/90">My situationship.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🍃 A Version of Myself I Miss</h3>
+                        <p class="text-darkbrown/90">There isn't really one specific version. I don't feel like I had some clearly defined “happy version.” Instead, fandoms have given me little pockets of happiness.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">💌 What I'd Tell My Younger Self</h3>
+                        <p class="text-darkbrown/90 font-hand text-lg">“Let's study.”</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🥀 What I'm Afraid Of Losing</h3>
+                        <p class="text-darkbrown/90">Family, friends, favorite onscreen people.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🏡 The Life I Actually Want</h3>
+                        <p class="text-darkbrown/90">Creative, balanced, comfortable, financially secure, not constantly busy, enjoyable work, loving people around me.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🌸 What Happiness Means to Me</h3>
+                        <p class="text-darkbrown/90">Being surrounded by love. Watching BL. Watching K-drama. Watching C-drama. Watching anything I love.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🇹🇭 What I'm Quietly Working Toward</h3>
+                        <p class="text-darkbrown/90 font-semibold text-rose-700">Moving to Thailand.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">☁️ Something I Don't Say Out Loud</h3>
+                        <p class="text-darkbrown/90">I genuinely love people a lot, but past experiences with fake people have made me more scared and insecure about openly showing it.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">⭐ What I Want People to Remember</h3>
+                        <p class="text-darkbrown/90">That I was a 100% authentic fangirl. My humor. The things I made. The things I did for people I cared about.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🤝 What Friendship Means to Me</h3>
+                        <p class="text-darkbrown/90">Growing together. Doing crazy things together. Sharing secrets. Experiencing life together.</p>
+                    </div>
+
+                    <div class="bg-paperbg p-4 rounded-xl border border-warmbrown/20">
+                        <h3 class="font-serif font-bold text-darkbrown mb-1">🏰 Future Me</h3>
+                        <p class="text-darkbrown/90">Rich enough to casually buy a ridiculous amount of merchandise every month.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 11 — DREAM LIFE / WISHLIST ==================== -->
+        <section id="section-tab-11" class="tab-content hidden">
+            <div class="max-w-3xl mx-auto scrapbook-card p-8 rounded-2xl relative bg-[#FCFBF8]">
+                <div class="tape" style="background-color: rgba(244, 194, 194, 0.7);"></div>
+                <div class="text-center mb-6">
+                    <span class="font-hand text-xl text-warmbrown">🇹🇭 future ania vision board 🇹🇭</span>
+                    <h2 class="font-serif text-3xl font-bold text-darkbrown">11 — DREAM LIFE & WISHLIST</h2>
+                </div>
+
+                <div class="bg-softpink/40 p-6 rounded-2xl border-2 border-dashed border-softpink text-center mb-6">
+                    <span class="font-hand text-2xl text-rose-700 block mb-1">🇹🇭 MAIN DREAM</span>
+                    <h3 class="font-serif text-3xl font-bold text-darkbrown">MOVE TO THAILAND</h3>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 font-sans text-xs font-semibold">
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">🎨 Creative Life</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">⚖️ Balanced Life</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">💰 Financial Freedom</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">🤍 Loving People</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">✨ More Creating</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">✈️ More Travel</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">🌟 More Fandom</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">🛍️ More Merch</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">🌐 More Websites</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center">🏷️ More Stickers</div>
+                    <div class="bg-paperbg p-3 rounded-xl border border-warmbrown/20 text-center col-span-2 sm:col-span-2">📓 More Notebooks</div>
+                </div>
+
+                <!-- Fake Future Shopping Cart -->
+                <div class="bg-matchagreen/30 p-5 rounded-2xl border border-matchagreen">
+                    <h3 class="font-serif font-bold text-darkbrown mb-3 flex items-center gap-2">
+                        🛒 Fake "Future Shopping Cart"
+                    </h3>
+                    <ul class="space-y-2 font-sans text-sm text-darkbrown">
+                        <li class="flex items-center gap-2">♡ 100 pieces of merch</li>
+                        <li class="flex items-center gap-2">♡ crafting supplies</li>
+                        <li class="flex items-center gap-2">♡ stationery</li>
+                        <li class="flex items-center gap-2">♡ stickers</li>
+                        <li class="flex items-center gap-2">♡ notebooks</li>
+                        <li class="flex items-center gap-2 font-semibold text-rose-700">♡ cute things I absolutely do not need</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer with Handwritten Back-to-Top Arrow -->
+    <footer class="w-full max-w-5xl mx-auto px-4 py-8 border-t border-warmbrown/20 flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
+        <div class="font-hand text-lg text-warmbrown">
+            ✦ ANIA LORE ✦ built with love & obsession for GitHub Pages ♡
+        </div>
+        <button onclick="scrollToTop()" class="font-hand text-xl text-darkbrown hover:text-rose-600 transition flex items-center gap-1 bg-paperbg px-4 py-2 rounded-xl border border-warmbrown/30 shadow-sm sticker-wiggle">
+            ↑ back to top
+        </button>
+    </footer>
+
+    <!-- RANDOM FACT MODAL / POPUP -->
+    <div id="fact-modal" class="fixed inset-0 bg-darkbrown/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="scrapbook-card bg-scrapcream p-6 rounded-2xl max-w-md w-full relative animate-in fade-in zoom-in">
+            <div class="tape"></div>
+            <h3 class="font-serif text-xl font-bold text-darkbrown mb-2 text-center">🎲 Random Ania Fact</h3>
+            <p id="fact-text" class="font-sans text-sm text-darkbrown text-center my-4 p-4 bg-paperbg rounded-xl border border-warmbrown/20 leading-relaxed"></p>
+            <div class="text-center">
+                <button onclick="closeModal('fact-modal')" class="bg-dustypink text-scrapcream px-5 py-2 rounded-xl font-sans text-sm font-semibold hover:opacity-90 transition">
+                    Got it! ⭐
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURRENT ERA MODAL / POPUP -->
+    <div id="era-modal" class="fixed inset-0 bg-darkbrown/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="scrapbook-card bg-scrapcream p-6 rounded-2xl max-w-md w-full relative animate-in fade-in zoom-in">
+            <div class="tape"></div>
+            <h3 class="font-serif text-xl font-bold text-darkbrown mb-2 text-center">⚡ CURRENT ERA OVERVIEW</h3>
+            <div class="font-sans text-sm text-darkbrown my-4 p-4 bg-paperbg rounded-xl border border-warmbrown/20 text-center space-y-2">
+                <p class="font-hand text-2xl font-bold text-rose-700">PHUWIN TANG</p>
+                <p class="font-semibold">+ NEW WEBSITES + STICKERS + RANDOM NOTEBOOKS + SATURDAY SHOWS</p>
+            </div>
+            <div class="text-center">
+                <button onclick="closeModal('era-modal')" class="bg-matchagreen text-darkbrown px-5 py-2 rounded-xl font-sans text-sm font-semibold hover:opacity-90 transition">
+                    So true bestie ⭐
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECRET PAGE EASTER EGG MODAL -->
+    <div id="secret-modal" class="fixed inset-0 bg-darkbrown/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="scrapbook-card bg-scrapcream p-6 rounded-2xl max-w-md w-full relative">
+            <div class="tape"></div>
+            <h3 class="font-serif text-xl font-bold text-rose-700 mb-2 text-center">⭐ SECRET DISCOVERY! ⭐</h3>
+            <p class="font-hand text-2xl text-darkbrown text-center my-4 p-4 bg-paperbg rounded-xl border border-warmbrown/20">
+                “girl you found the secret page 😭”
+            </p>
+            <div class="text-center">
+                <button onclick="closeModal('secret-modal')" class="bg-softpink text-darkbrown px-5 py-2 rounded-xl font-sans text-sm font-semibold hover:opacity-90 transition">
+                    Close secret ♡
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- JAVASCRIPT DATA STRUCTURES FOR EASY EDITING ---
+
+        const randomFacts = [
+            "Ania is 19, INFJ, Leo ♌, and her favorite number is 7!",
+            "Her most used phrase is: 'Like, bro, can you believe it?'",
+            "She's currently obsessed with Phuwin Tang and making new websites.",
+            "Her weirdest habit is talking/yapping a LOT and sometimes regretting oversharing later.",
+            "Her biggest pet peeve is perfect handwriting getting ruined because someone calls/interrupts her.",
+            "If she disappeared for a week, she's probably at home because she's broke.",
+            "Her useless talent is organizing literally anything for everyone except herself.",
+            "She would instantly master Thai or coding if she could pick a skill to master."
+        ];
+
+        const favoriteThingsData = [
+            { category: "COLORS", items: "Pink, Green, Brown" },
+            { category: "COLOR COMBOS", items: "Pink + Green, Pink + Brown" },
+            { category: "FOOD", items: "Seafood" },
+            { category: "SNACKS", items: "Chocolate candies, Noodles, Desserts" },
+            { category: "DRINK", items: "Milkshake + whipped cream" },
+            { category: "FRUIT", items: "Mango / Jackfruit" },
+            { category: "DESSERT", items: "Chocolate cake, Vanilla cake" },
+            { category: "CANDY", items: "Sour Patch" },
+            { category: "ICE CREAM", items: "Chocolate, Vanilla" },
+            { category: "FAST FOOD", items: "Pizza" },
+            { category: "CUISINES", items: "Thai, Japanese, Chinese" },
+            { category: "SEASON", items: "Spring" },
+            { category: "WEATHER", items: "Warm + breezy + sunny + soft rainy vibes" },
+            { category: "FLOWER", items: "Lily" },
+            { category: "ANIMAL", items: "Cat" },
+            { category: "PLACE", items: "My room / Beach" },
+            { category: "COUNTRY", items: "Thailand" },
+            { category: "CITY", items: "Bangkok" },
+            { category: "CLOTHING", items: "Oversized anything, especially T-shirts" },
+            { category: "AESTHETIC", items: "Juminocore, Pink-green, Pink-brown, Cute + whimsical" },
+            { category: "SMELL", items: "Rain, Chocolate" }
+        ];
+
+        const mediaLoreData = [
+            { type: "MOVIE", title: "The Lord of the Rings" },
+            { type: "HOLLYWOOD SHOW", title: "Modern Family" },
+            { type: "K-DRAMA", title: "Happiness" },
+            { type: "C-DRAMA", title: "When I Fly Towards You" },
+            { type: "THAI DRAMA", title: "2gether" },
+            { type: "ANIME", title: "Attack on Titan" },
+            { type: "BOOK", title: "No fixed favorite" },
+            { type: "CURRENTLY READING", title: "The Grandmaster of Demonic Cultivation / MDZS" },
+            { type: "WHY", title: "I love The Untamed and its characters SO MUCH." },
+            { type: "FICTIONAL CHARACTER", title: "Wei Wuxian" }
+        ];
+
+        const littleThingsData = [
+            { title: "GO-TO ORDER", desc: "Milkshake" },
+            { title: "COMFORT FOOD", desc: "Milkshake / Seafood" },
+            { title: "MOST USED EMOJI", desc: "⭐" },
+            { title: "MOST USED PHRASE", desc: "“Like, bro, can you believe it?”" },
+            { title: "WEIRDEST HABIT", desc: "Talking/yapping a LOT and sometimes regretting oversharing later." },
+            { title: "BIGGEST PET PEEVE", desc: "Perfect handwriting getting ruined because someone calls/interrupts me — or accidentally ruining something myself after thinking it looked pretty." },
+            { title: "TINY THINGS THAT MAKE ME HAPPY", desc: "Clean room, clean floor, new bedsheet, everything looking fresh" },
+            { title: "“USELESS” TALENT", desc: "Organizing literally anything for everyone except myself." },
+            { title: "CURRENT EMPIRE", desc: "PHUWIN + every cute person I discover while watching things." },
+            { title: "CURRENT FAVORITE MEME", desc: "The nail-biting / “ugh” / “you ate” / “I'm shy” reaction type." },
+            { title: "ALWAYS SAY YES TO", desc: "Watching BL, K-drama, C-drama, horror, literally anything together" },
+            { title: "NEVER REALLY SAY NO TO", desc: "Helping someone if I genuinely can." },
+            { title: "IF I DISAPPEAR FOR A WEEK", desc: "Probably at home because I'm broke." },
+            { title: "SKILL I'D INSTANTLY MASTER", desc: "Thai or coding." }
+        ];
+
+        // Celeb Database structure with collapsible lore placeholders
+        const celebCategories = [
+            { id: 'k-actors', name: 'Korean Actors' },
+            { id: 'c-actors', name: 'Chinese Actors' },
+            { id: 't-actors', name: 'Thai Actors' },
+            { id: 't-actresses', name: 'Thai Actresses' },
+            { id: 'k-actresses', name: 'Korean Actresses' },
+            { id: 'c-actresses', name: 'Chinese Actresses' }
+        ];
+
+        const celebData = {
+            'k-actors': ["Park Hyung-sik", "Lee Jong-suk", "Song Kang", "Park Bo-gum", "Cha Eun-woo", "Kim Hyun-jin"],
+            'c-actors': ["He Yu", "Xiao Zhan", "Wang Yibo", "Zhou Yiran"],
+            't-actors': ["PondPhuwin", "TeeTeePor", "SeaKeen", "PerthSanta", "WilliamEst", "AouBoom", "GeminiFourth", "SurfJava", "AuAuSave", "NorthOtto", "RyujinPatji", "Bright", "Win", "Aungpao"],
+            't-actresses': ["Kapook", "Pahn", "Tu", "Prim", "Jane", "Yanin", "Ninna"],
+            'k-actresses': ["Park Shin-hye", "IU", "Lee Hyeri"],
+            'c-actresses': ["Zhao Lusi", "Esther Yu", "Meng Ziyi"]
+        };
+
+        // --- RENDER FUNCTIONS ---
+
+        function renderFavoriteThings() {
+            const grid = document.getElementById('favorites-grid');
+            grid.innerHTML = favoriteThingsData.map(fav => `
+                <div class="scrapbook-card p-4 rounded-xl">
+                    <span class="block text-xs font-bold text-warmbrown uppercase mb-1">⭐ ${fav.category}</span>
+                    <strong class="font-serif text-darkbrown text-sm sm:text-base">${fav.items}</strong>
+                </div>
+            `).join('');
+        }
+
+        function renderMediaLore() {
+            const grid = document.getElementById('media-grid');
+            grid.innerHTML = mediaLoreData.map(m => `
+                <div class="scrapbook-card p-4 rounded-xl bg-paperbg">
+                    <span class="block text-xs font-bold text-warmbrown uppercase mb-1">📌 ${m.type}</span>
+                    <strong class="font-serif text-darkbrown text-base">${m.title}</strong>
+                </div>
+            `).join('');
+        }
+
+        function renderLittleThings() {
+            const grid = document.getElementById('little-things-grid');
+            grid.innerHTML = littleThingsData.map(lt => `
+                <div class="scrapbook-card p-4 rounded-xl">
+                    <span class="block text-xs font-bold text-warmbrown uppercase mb-1">💡 ${lt.title}</span>
+                    <p class="font-sans text-darkbrown text-xs sm:text-sm font-medium leading-relaxed">${lt.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        let currentCelebCat = 't-actors';
+
+        function renderCelebCategories() {
+            const container = document.getElementById('celeb-cat-buttons');
+            container.innerHTML = celebCategories.map(cat => `
+                <button onclick="selectCelebCat('${cat.id}')` class="px-3 py-1.5 rounded-xl font-sans text-xs sm:text-sm font-semibold border transition ${currentCelebCat === cat.id ? 'bg-dustypink text-scrapcream border-warmbrown' : 'bg-paperbg text-darkbrown border-warmbrown/30 hover:bg-softpink/30'}">
+                    ${cat.name}
+                </button>
+            `).join('');
+            renderCelebCards();
+        }
+
+        function selectCelebCat(catId) {
+            currentCelebCat = catId;
+            renderCelebCategories();
+        }
+
+        function renderCelebCards() {
+            const container = document.getElementById('celeb-cards-container');
+            const list = celebData[currentCelebCat] || [];
+            container.innerHTML = list.map((name, idx) => `
+                <div class="scrapbook-card p-4 rounded-xl bg-paperbg cursor-pointer group" onclick="toggleCelebDetails(${idx})">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="font-serif font-bold text-darkbrown text-base group-hover:text-rose-700 transition">⭐ ${name}</h4>
+                        <span class="font-hand text-xs text-warmbrown">click to expand</span>
+                    </div>
+                    <div id="celeb-details-${idx}" class="hidden mt-3 pt-3 border-t border-warmbrown/20 space-y-1 font-sans text-xs text-darkbrown/80">
+                        <p><strong>BIRTHDAY:</strong> [Placeholder]</p>
+                        <p><strong>DEBUT:</strong> [Placeholder]</p>
+                        <p><strong>ROLES:</strong> [Placeholder]</p>
+                        <p><strong>WORKS:</strong> [Placeholder]</p>
+                        <p><strong>SOCIALS:</strong> [Placeholder]</p>
+                        <p><strong>FAVORITE THINGS:</strong> [Placeholder]</p>
+                        <p><strong>RANDOM LORE:</strong> [Placeholder]</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCelebDetails(idx) {
+            const el = document.getElementById(`celeb-details-${idx}`);
+            if (el) {
+                el.classList.toggle('hidden');
+            }
+        }
+
+        // --- TAB SWITCHING ---
+
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Show selected tab content
+            const target = document.getElementById(tabId === 'home' ? 'section-home' : `section-${tabId}`);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+            // Update active states on nav tabs
+            document.querySelectorAll('.notebook-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event && event.currentTarget && event.currentTarget.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- INTERACTIVE FEATURES ---
+
+        function triggerRandomFact() {
+            const randomIndex = Math.floor(Math.random() * randomFacts.length);
+            document.getElementById('fact-text').innerText = randomFacts[randomIndex];
+            document.getElementById('fact-modal').classList.remove('hidden');
+        }
+
+        function triggerCurrentEraModal() {
+            document.getElementById('era-modal').classList.remove('hidden');
+        }
+
+        function revealSecretPage() {
+            document.getElementById('secret-modal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        let fangirlActive = false;
+        function toggleFangirlMode() {
+            fangirlActive = !fangirlActive;
+            const btn = document.getElementById('fangirlBtn');
+            if (fangirlActive) {
+                document.body.classList.add('fangirl-mode');
+                btn.innerText = "💖 fangirl mode: ON ✨";
+                btn.classList.add('bg-rose-500', 'text-white');
+            } else {
+                document.body.classList.remove('fangirl-mode');
+                btn.innerText = "💖 fangirl mode: OFF";
+                btn.classList.remove('bg-rose-500', 'text-white');
+            }
+        }
+
+        let sevenClickCount = 0;
+        function clickFavoriteSeven() {
+            sevenClickCount++;
+            if (sevenClickCount >= 3) {
+                alert("⭐ Wow, you really love 7! Ania's favorite number is officially shining! ⭐");
+                sevenClickCount = 0;
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- INITIALIZATION ON LOAD ---
+        window.onload = function() {
+            renderFavoriteThings();
+            renderMediaLore();
+            renderLittleThings();
+            renderCelebCategories();
+        };
+    </script>
+</body>
+</html>
